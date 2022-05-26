@@ -51,7 +51,7 @@
               class="rating">
               <img
                 :src="`https://raw.githubusercontent.com/ParkYoungWoong/vue3-movie-app/master/src/assets/${name}.png`"
-                alt="name" />
+                :alt="name" />
               <span>{{ score }}</span>
             </div>
           </div>
@@ -168,6 +168,8 @@ export default {
     background-color: $gray-200;
     background-size: cover;
     background-position: center;
+    position: relative;
+    flex-shrink: 0;
   }
   .specs {
     flex-grow: 1;
@@ -213,6 +215,34 @@ export default {
       color: $black;
       font-family: "Oswald", sans-serif;
       font-size: 20px;
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    .poster {
+      width: 300px;
+      height: 300px*3/2;
+      margin-right: 40px;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    display: block;
+    .poster {
+      margin-right: 40px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .specs {
+      .title {
+        font-size: 50px;
+      }
+      .ratings {
+        .rating-wrap {
+          display: block;
+          .rating {
+            margin-top: 10px;
+          }
+        }
+      }
     }
   }
 }

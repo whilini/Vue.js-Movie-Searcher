@@ -60,14 +60,18 @@ export default {
 .about {
   text-align: center;
   .photo {
-    position:relative;
     width: 250px;
     height: 250px;
     margin: 40px auto 20px;
     padding: 30px;
     border: 10px solid $gray-300;
-    .img {
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: $gray-200;
+    position: relative;
+    img {
       width: 100%;
+      border-radius: 50%;
     }
   }
   .name {
