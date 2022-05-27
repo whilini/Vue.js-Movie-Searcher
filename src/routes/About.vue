@@ -18,7 +18,7 @@
 
 
 <script>
-// import buttercup from "@/assets/buttercup2.png"
+import { mapState } from 'vuex'
 import Loader from '../components/Loader.vue'
 
 export default {
@@ -26,22 +26,15 @@ export default {
   data() {
     return {
       imageLoading: true,
-      // buttercup: buttercup
     }
   },
   computed: {
-    image() {
-      return this.$store.state.about.image
-    },
-    name() {
-      return this.$store.state.about.name
-    },
-    email() {
-      return this.$store.state.about.email
-    },
-    blog() {
-      return this.$store.state.about.blog
-    }
+    ...mapState('about',[
+      'image',
+      'name',
+      'email', 
+      'blog',
+    ]),
   },
   mounted() {
     this.init()
